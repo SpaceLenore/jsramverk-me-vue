@@ -1,29 +1,10 @@
-# redovisa
+# JS-Ramverk Me-Sida
 
-## Project setup
-```
-npm install
-```
+Detta är min me-sida för kursen jsramverk skriven i VueJS.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Starta upp sidan
+Börja med att installera node-modules via `npm install`, sedan kan du starta sidan med kommandot `npm run serve`.
+Då startar den upp en dev-server på port 8080 som standard (om porten är upptagen används 8081).
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Versionshantering
+För varje kursmoment som avklarats så publiceras en tagg (1.x för kmom01, 2.x för kmom02, osv...)
