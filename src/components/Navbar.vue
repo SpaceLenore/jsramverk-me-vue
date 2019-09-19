@@ -5,9 +5,11 @@
         </div>
         <div class="nav-link-wrap">
             <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav-link" to="/register">Skapa Konto</router-link>
             <select class="reports-dropdown" @change="changeKmom($event)">
                 <option disabled selected>Redovisningstexter</option>
                 <option value="1">Kmom01</option>
+                <option value="2">Kmom02</option>
             </select>
         </div>
     </div>
