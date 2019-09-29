@@ -38,6 +38,7 @@ export default {
         },
         logout: function () {
             this.$store.commit("setJwt", null)
+            localStorage.removeItem("token")
         },
         weekCallback: function (req) {
             if (req.data.code == 200) {
