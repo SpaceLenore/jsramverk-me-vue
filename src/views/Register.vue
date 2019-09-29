@@ -33,6 +33,7 @@
                         <span class="form-error" v-for="error in errors" v-bind:key="error">
                             {{error}}
                         </span>
+                        <span class="form-success">{{success}}</span>
                     </span>
                     <input class="submit-register" type="submit" value="Skapa Konto">
                 </form>
@@ -48,6 +49,7 @@ export default {
     data() {
         return {
             errors: [],
+            success: null,
             name: null,
             birthday: {
                 year: null,
@@ -73,17 +75,31 @@ export default {
                 this.errors.push("Lösenordet måste vara längre än 10 tecken")
             }
             else {
-                this.name = null
-                this.email = null
-                this.password = null
-                this.birthday = {year: null, month: null, day: null}
-                this.gdpr = null
+                this.$request.post("/register", {
+                    name: this.name,
+                    email: this.email,
+                    password: this.password,
+                    birthday: this.birthday,
+                    gdpr: this.gdpr
+                }, this.registerCallback)
             }
         },
         limitchars(e) {
             if (e.target.value.length > e.target.maxLength) {
                 e.target.value = e.target.value.toString().slice(0,e.target.maxLength)
             }
+        },
+        registerCallback(data) {
+            if (data.data.code == 200) {
+                this.success = data.data.msg
+            } else {
+                this.errors.push("Failed to create user")
+            }
+            this.name = null
+            this.email = null
+            this.password = null
+            this.birthday = {year: null, month: null, day: null}
+            this.gdpr = null
         }
     }
 };
@@ -154,6 +170,11 @@ input:focus {outline:0;}
 
 .form-error {
     color: red;
+    font-style: italic;
+}
+
+.form-success {
+    color: green;
     font-style: italic;
 }
 

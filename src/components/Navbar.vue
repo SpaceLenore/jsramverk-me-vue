@@ -5,7 +5,14 @@
         </div>
         <div class="nav-link-wrap">
             <router-link class="nav-link" to="/">Home</router-link>
-            <router-link class="nav-link" to="/register">Skapa Konto</router-link>
+            <span v-if="this.$store.state.jwt">
+                <router-link class="nav-link" to="/report">Skriv Rapport</router-link>
+                <a href="#" class="nav-link" to="/logout" @click.prevent="logout" >Logga Ut</a>
+            </span>
+            <span v-else>
+                <router-link class="nav-link" to="/register">Skapa Konto</router-link>
+                <router-link class="nav-link" to="/login">Logga In</router-link>
+            </span>
             <select class="reports-dropdown" @change="changeKmom($event)">
                 <option disabled selected>Redovisningstexter</option>
                 <option value="1">Kmom01</option>
@@ -26,6 +33,9 @@ export default {
         changeKmom: function (newKmom) {
             let kmomNumber = newKmom.target.selectedOptions[0].value;
             this.$router.push("/reports/week/" + kmomNumber)
+        },
+        logout: function () {
+            this.$store.commit("setJwt", null)
         }
     }
 }
