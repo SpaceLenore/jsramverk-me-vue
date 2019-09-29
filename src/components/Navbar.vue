@@ -15,18 +15,20 @@
             </span>
             <select class="reports-dropdown" @change="changeKmom($event)">
                 <option disabled selected>Redovisningstexter</option>
-                <option value="1">Kmom01</option>
-                <option value="2">Kmom02</option>
+                    <option v-for="week in weeks" v-bind:key="week.week" :value="week.week">Kmom {{week.week}}</option>
             </select>
         </div>
     </div>
 </template>
 
 <script>
+import request from '../requests'
+
 export default {
     data() {
         return {
-            kmom: 0
+            kmom: 0,
+            weeks: []
         }
     },
     methods: {
@@ -36,7 +38,15 @@ export default {
         },
         logout: function () {
             this.$store.commit("setJwt", null)
+        },
+        weekCallback: function (req) {
+            if (req.data.code == 200) {
+                this.weeks = req.data.data
+            }
         }
+    },
+    created() {
+        request.get("/reports/", this.weekCallback);
     }
 }
 </script>
