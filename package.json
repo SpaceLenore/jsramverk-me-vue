@@ -5,7 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "pretest": "npm run build",
+    "test": "nyc --reporter=clover -x 'tests/' mocha --timeout 10000 --recursive tests/",
+    "posttest": "npm run lint",
+    "deploy": "npm run build && rsync -av dist/* deploy@hackerti.me:/home/deploy/htdocs/me.hackerti.me/"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -19,8 +23,14 @@
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "express-static": "^1.2.6",
+    "mocha": "^6.2.1",
+    "nyc": "^14.1.1",
+    "puppeteer": "^1.20.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
