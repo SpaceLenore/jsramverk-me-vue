@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/SpaceLenore/jsramverk-me-vue.svg?branch=master)](https://travis-ci.org/SpaceLenore/jsramverk-me-vue)
+[![Build Status](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/badges/build.png?b=master)](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/?branch=master)
+
 # JS-Ramverk Me-Sida
 
 Detta är min me-sida för kursen jsramverk skriven i VueJS.
