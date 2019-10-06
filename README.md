@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/SpaceLenore/jsramverk-me-vue.svg?branch=master)](https://travis-ci.org/SpaceLenore/jsramverk-me-vue)
 [![Build Status](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/badges/build.png?b=master)](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SpaceLenore/jsramverk-me-vue/?branch=master)
+[![Codeship Status for SpaceLenore/jsramverk-me-vue](https://app.codeship.com/projects/9d42f8d0-ca7c-0137-55c4-0edeb012ab79/status?branch=master)](https://app.codeship.com/projects/367922)
 
 # JS-Ramverk Me-Sida
 
