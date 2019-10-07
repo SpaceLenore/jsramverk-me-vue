@@ -57,7 +57,7 @@ export default {
         },
         joinChat() {
             if (this.setnick) {
-                this.socket = io('wsc.hackerti.me');
+                this.socket = io('https://wsc.hackerti.me');
                 this.user = this.setnick
                 this.socket.on('msg', (data) => {
                     this.messages.push(data);
