@@ -43,7 +43,7 @@ describe('Client Testing', () => {
         })
     
         it('Click on Register', async () => {
-            await page.click('.nav-link-wrap > span:nth-child(2) > a:nth-child(1)')
+            await page.click('.nav-link-wrap > span:nth-child(3) > a:nth-child(1)')
             await page.waitFor(delay)
             const pageTitleElement = await page.$('.content-header')
             const pageTitle = await page.evaluate(element => element.textContent, pageTitleElement)
@@ -52,7 +52,7 @@ describe('Client Testing', () => {
         })
     
         it('Click on Login', async () => {
-            await page.click('a.nav-link:nth-child(2)')
+            await page.click('.nav-link-wrap > span:nth-child(3) > a:nth-child(2)')
             await page.waitFor(delay)
             const pageTitleElement = await page.$('.content-header')
             const pageTitle = await page.evaluate(element => element.textContent, pageTitleElement)
