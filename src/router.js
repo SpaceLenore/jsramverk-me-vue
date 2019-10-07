@@ -6,6 +6,7 @@ import Register from './views/Register.vue'
 import Login from './views/Login.vue'
 import Report from './views/Report.vue'
 import Update from './views/Update.vue'
+import Chat from './views/Chat.vue'
 import NotFound from './views/NotFound.vue'
 
 Vue.use(Router)
@@ -48,6 +49,11 @@ export default new Router({
             path: '/report',
             name: 'Report',
             component: Report
+        },
+        {
+            path: '/chat',
+            name: 'Chat',
+            component: Chat
         }
   ]
 })

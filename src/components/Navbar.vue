@@ -5,6 +5,7 @@
         </div>
         <div class="nav-link-wrap">
             <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav-link" to="/chat">Chat</router-link>
             <span v-if="this.$store.state.jwt">
                 <router-link class="nav-link" to="/report">Skriv Rapport</router-link>
                 <a href="#" class="nav-link" to="/logout" @click.prevent="logout" >Logga Ut</a>
@@ -13,6 +14,7 @@
                 <router-link class="nav-link" to="/register">Skapa Konto</router-link>
                 <router-link class="nav-link" to="/login">Logga In</router-link>
             </span>
+
             <select class="reports-dropdown" @change="changeKmom($event)">
                 <option disabled selected>Redovisningstexter</option>
                     <option v-for="week in weeks" v-bind:key="week.week" :value="week.week">Kmom {{week.week}}</option>
