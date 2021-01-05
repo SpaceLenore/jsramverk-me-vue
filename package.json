@@ -12,7 +12,7 @@
     "deploy": "npm run build && rsync -av dist/* deploy@hackerti.me:/home/deploy/htdocs/me.hackerti.me/"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "socket.io-client": "^2.3.0",
     "uws": "^10.148.1",
